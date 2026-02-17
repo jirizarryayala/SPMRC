@@ -1,0 +1,161 @@
+\documentclass{article}
+
+%preamble here for options
+
+%-----------------------------------------------------------------------------%
+% DEFINITIONS:
+%
+% include \usepackage here
+%-----------------------------------------------------------------------------%
+\usepackage{authblk}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{xy}
+%\input{bob_macros.tex}
+
+
+%\usepackage{draftwatermark}
+%\SetWatermarkText{University of Washington}
+%\SetWatermarkScale{1}
+%\SetWatermarkAngle{0}
+%%\SetWatermarkColor[rgb]{0.7,0,0.7}
+%\SetWatermarkLightness{.8}
+%-----------------------------------------------------------------------------%
+% HYPERREF: plain black hypertext references for ref's and cite's.
+%-----------------------------------------------------------------------------%
+\usepackage[pdftex,  linkcolor=blue, citecolor=black, filecolor=black, urlcolor=blue,colorlinks] {hyperref} % letterpaper, pdfusetitle, plainpages=false,bookmarks, bookmarksnumbered, 
+\usepackage{relsize}   %for Hmisc tables
+\usepackage{multirow}   % for multiple rows in tabular
+\usepackage{rotating}           % for sideways tables/figures
+\usepackage{pdflscape}        % for landscaping for large tables and figures
+\usepackage{ctable}
+\usepackage{longtable}  %to create large tables 
+%\usepackage[T1]{fontenc}
+%\usepackage[scaled]{uarial}    % aerial
+\usepackage[scaled]{helvet}     % helvetica
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage{subfig} % for using sub-plot
+\usepackage{wrapfig} % to wrap figures
+\usepackage{float}
+% tikz & pgf
+%\usepackage{tikz}
+%\usepackage{pgfkeys}
+%\usetikzlibrary[arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri]
+%\usetikzlibrary{mindmap} %
+%\usetikzlibrary{er}
+%\usetikzlibrary{matrix} % LATEX and plain TEX
+%\usetikzlibrary{shapes.multipart}
+\usepackage{setspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr} %Page style
+
+\pagestyle{fancy}
+\lhead{Tulane University - BIMI-6100\\ \today}
+%\chead{}
+\rhead{}
+%\lfoot{}
+%\cfoot{}
+%\rfoot{}
+\marginparwidth = 35pt %35pt
+\textwidth = 440pt %390pt
+\headwidth = 440pt
+% one inch + \hoffset
+% one inch + \voffset
+\oddsidemargin = 15pt %31pt
+% \topmargin = 20pt
+% \headheight = 12pt
+% \headsep = 25pt
+% \textheight = 592pt
+% \textwidth = 390pt
+% \marginparsep = 10pt
+% \marginparwidth = 35pt
+% \footskip = 30pt
+% \marginparpush = 7pt (not shown)
+% \hoffset = 0pt
+% \voffset = 0pt
+% \paperwidth = 597pt
+% \paperheight = 845pt
+% http://en.wikibooks.org/wiki/LaTeX/Page_Layout
+
+%Instructions: Use 8,000 characters or less including spaces (approximately two single-spaced, typed pages) to briefly describe your previous research training experience, your short-term academic and research objectives, your long-term career objectives and your plan to achieve these objectives. Please include your name and the date in the header of the document.
+
+%Note: Please know that you can upload a new file to replace any previously uploaded file.
+
+%This form will not lock until you submit the complete application.
+
+%end of preamble, beginning of printable document
+
+\title{BIMI-6100 Elements in Biomedical Informatics\\ Fall 2023}
+\author{David Crosslin\\
+\small  Tulane University School of Medicine \\
+\small John W. Deming Department of Medicine \\
+\small Division of Biomedical Informatics and Genomics
+\small  New Orleans, LA}
+
+
+\date{\today}
+%-------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+\tableofcontents 
+\listoffigures
+\listoftables
+\clearpage
+
+%%------------------------------------------------------------------------------- 
+\section{Hmisc \texttt{describe} function - rhc data}
+\newpage
+\input{subfiles/rhc.tex}
+%%------------------------------------------------------------------------------- 
+% read in input from R
+\begin{landscape}
+\thispagestyle{empty}
+\section{Hmisc \texttt{summary} function - rhc data}
+\input{subfiles/rhc_by_sex.tex}
+\end{landscape}
+%%------------------------------------------------------------------------------- 
+%%------------------------------------------------------------------------------- 
+\section{ols function output} 
+\newpage
+\input{subfiles/rhc_ols_summary.tex}
+\input{subfiles/rhc_ols_anova.tex}
+
+\begin{figure}[h]
+    \centering
+   \fbox{\includegraphics[scale=.50]{subfiles/rhc_ols_summary.png}}
+    \caption{plot(summary(m))}
+    \label{fig:plot(summary(m))}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+   \fbox{\includegraphics[scale=.50]{subfiles/rhc_ols_anova.png}}
+    \caption{plot(anova(m))}
+    \label{fig:plot(anova(m))}
+\end{figure}
+
+
+%\input{/google_drive/bime/classes/mebi_537/R/latex_output/m_summary.tex}
+%\newpage
+
+%\section{lrm fuction output}
+%\input{subfiles/rhc_lrm.tex}
+
+%\newpage
+%\input{/google_drive/bime/classes/mebi_537/R/latex_output/m2.tex}
+%\input{/google_drive/bime/classes/mebi_537/R/latex_output/m2_anova.tex}
+%\input{/google_drive/bime/classes/mebi_537/R/latex_output/m2_summary.tex}
+
+
+%\nocite{*}  %causes all items in the data base to be included in the references
+\bibliographystyle{plain}                                                                                         
+%put the name of your bibliography file here.
+%\bibliography{refs}
+\bibliography{/Users/davidcrosslin/support_files/bibliography/lit_crosslin.bib}
+%\include{biography}
+%-----------------------------------------------------------------------------%
+\end{document}

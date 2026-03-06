@@ -272,7 +272,7 @@ pbmc <- NormalizeData(pbmc, assay = "RNA", normalization.method = "LogNormalize"
 save_rds(pbmc, "atac_06_with_gene_activity")
 
 ###############################################################################
-# STEP 7: VISUALIZE YOUR MARKER GENES
+# STEP 7: VISUALIZE YOUR MARKER GENES -- -these are markers that you need to change based on population of cell you want to study 
 ###############################################################################
 cat("\n=== STEP 7: Visualizing marker genes ===\n")
 

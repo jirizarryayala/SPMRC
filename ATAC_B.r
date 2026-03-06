@@ -381,7 +381,7 @@ n_after <- ncol(pbmc)
 pct_retained <- round(n_after/n_before * 100, 1)
 n_removed <- n_before - n_after
 
-cat("\n✅ FILTERING COMPLETE\n")
+cat("\n FILTERING COMPLETE\n")
 cat("═══════════════════════════════════════════════════\n")
 cat(sprintf("  Cells before filtering:   %6d\n", n_before))
 cat(sprintf("  Cells after filtering:    %6d\n", n_after))
@@ -390,10 +390,10 @@ cat(sprintf("  Cells removed:            %6d\n", n_removed))
 cat("═══════════════════════════════════════════════════\n\n")
 
 if (pct_retained < 30) {
-  cat("⚠️  WARNING: Retained <30% of cells\n")
+  cat("  WARNING: Retained <30% of cells\n")
   cat("   Consider: Re-run with N_MAD_QC = 4 for more lenient filtering\n\n")
 } else if (pct_retained > 95) {
-  cat("⚠️  WARNING: Retained >95% of cells\n")
+  cat("  WARNING: Retained >95% of cells\n")
   cat("   Consider: Re-run with N_MAD_QC = 2.5 for stricter filtering\n\n")
 } else {
   cat("✓ Retention rate is within expected range (30-95%)\n\n")
@@ -759,13 +759,13 @@ cat("═════════════════════════
 cat("Final ATAC-seq object:\n")
 print(pbmc)
 
-cat("\n📁 Output directories:\n")
+cat("\n Output directories:\n")
 cat("  Main:   ", outs_dir, "\n")
 cat("  Plots:  ", plotdir, "\n")
 cat("  Tables: ", tabdir, "\n")
 cat("  RDS:    ", rdsdir, "\n\n")
 
-cat("📊 Key files generated:\n")
+cat(" Key files generated:\n")
 cat("  1. QC metrics:              atac_qc_metrics.csv\n")
 cat("  2. Filtering thresholds:    filtering_thresholds_applied.csv\n")
 cat("  3. Cell type counts:        celltype_counts.csv\n")
@@ -774,7 +774,7 @@ cat("  5. B cell markers (UMAP):   bcell_markers_CD19_CD20_CD38_CD40_umap.pdf\n"
 cat("  6. Coverage plots:          coverage_CD19/MS4A1/CD38/CD40.pdf\n")
 cat("  7. Labeled UMAPs:           atac_clustering_umap_tsne_labeled.pdf\n\n")
 
-cat("📈 Analysis summary:\n")
+cat(" Analysis summary:\n")
 cat("  MAD stringency used:        ", N_MAD_QC, "\n")
 cat("  Cells retained:             ", ncol(pbmc), "\n")
 cat("  Peaks analyzed:             ", nrow(pbmc), "\n")
@@ -783,21 +783,22 @@ if ("predicted.id" %in% colnames(pbmc@meta.data)) {
   cat("  Cell types annotated:       ", length(unique(pbmc$predicted.id)), "\n")
 }
 
-cat("\n🔬 B Cell Analysis Focus:\n")
+cat("\n B Cell Analysis Focus:\n")
 cat("  Markers analyzed:           CD19, CD20 (MS4A1), CD38, CD40\n")
 cat("  Coverage plots generated:   4 B cell marker loci\n")
 cat("  UMAP plots:                 Labeled with cluster numbers and cell types\n\n")
 
-cat("⏱️  Analysis completed:", format(Sys.time()), "\n\n")
+cat("  Analysis completed:", format(Sys.time()), "\n\n")
 
 cat("═══════════════════════════════════════════════════════════\n")
 
 sink()
 
-cat("\n✅ Full log saved to:", logfile, "\n")
-cat("✅ All outputs saved to:", outs_dir, "\n")
-cat("✅ B cell-specific analysis in: B_cell/ subdirectory\n\n")
+cat("\n Full log saved to:", logfile, "\n")
+cat(" All outputs saved to:", outs_dir, "\n")
+cat(" B cell-specific analysis in: B_cell/ subdirectory\n\n")
 
 ###############################################################################
 # END OF SCRIPT
+
 ###############################################################################

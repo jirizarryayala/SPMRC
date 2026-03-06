@@ -1,6 +1,7 @@
 ###############################################################################
 # COMPLETE ATAC-seq Pipeline - OBJECTIVE & REPRODUCIBLE
 # MAD-based QC filtering + Standard ATAC-seq workflow
+# a qc based on MAD - median and +_ 3 SD -- this automates qc for outiers cells 
 ###############################################################################
 
 ## -------------------- LIBRARY PATHS (prepend; don't replace system libs) -----
@@ -277,7 +278,7 @@ cat("---------------------------------------------------\n\n")
 # Uses MAD (Median Absolute Deviation) - more robust than SD
 # MAD = median(|X - median(X)|) * 1.4826 (scale factor for normal distribution)
 # 
-# Why MAD instead of mean ± SD?
+# Why MAD instead of mean Â± SD?
 # - Robust to outliers (doesn't get inflated by extreme values)
 # - Adapts to your specific dataset
 # - Standard in single-cell genomics (used by Seurat, Scanpy)

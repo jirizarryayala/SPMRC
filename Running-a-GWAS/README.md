@@ -6,5 +6,6 @@ This folder contains files needed to run a GWAS. To run a GWAS, follow the below
 
 
 Possible errors and Fixes:
+
 sbatch: error: instead of expected UNIX line breaks (\n).
 Fix: dos2unix GWAS_Script.sh

@@ -8,4 +8,4 @@ The Sex-Based Precision Medicine Research Core (SPMRC) repository serves as a hu
 
 **Inactive projects**: Scripts made for projects with SPMRC-affiliated researchers which have been concluded. Are not actively maintained, but are preserved in case they become useful at a later point or need to be reference.
 
-Inquire about out services here: https://cobre-spm.tulane.edu/research-core
+Inquire about our services here: https://cobre-spm.tulane.edu/research-core

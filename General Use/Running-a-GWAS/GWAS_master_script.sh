@@ -14,13 +14,13 @@
 # ==============================================================================
 # CONFIGURABLE FLAGS (Update these for different diseases)
 # ==============================================================================
-OUT_DIR="/lustre/project/crosslin/crosslin_team/ssalter/hem_results_sex_stratified_reduced_controls/"
-ICD_CODES="275.03,E83.110,E83.111,E83.119" # Comma-separated list
+OUT_DIR="/lustre/project/crosslin/crosslin_team/ssalter/hem_results_sex_stratified_reduced_controls/" #replace this with your directory
+ICD_CODES="275.03,E83.110,E83.111,E83.119" # replace with your own comma-separated list of ICD codes of interest
 COVAR_COLS="3-12"                   # Columns in the covariate file
-DISEASE_NAME="Hemochromatosis"
-MAF="0.05"
+DISEASE_NAME="Hemochromatosis"      #repalce with your own disease name of interest
+MAF="0.05"                          #replace with your desired MAF
 
-# STRAT_MODE options: "none" (Combined), "male", "female", or "both" (Two GWAS)
+# STRAT_MODE options: "none" (Combined), "male", "female", or "both" (two GWAS)
 STRAT_MODE="both"
 
 # ==============================================================================

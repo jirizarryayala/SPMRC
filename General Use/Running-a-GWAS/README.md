@@ -1,4 +1,4 @@
-This folder contains files needed to run a GWAS. To run a GWAS, follow the below steps:
+This folder contains files needed to run a GWAS. To run a GWAS using this code, follow the below steps:
 
 1) Download Plink 2.0 here: https://www.cog-genomics.org/plink/2.0/
 2) Download all 3 .sh and R files in this folder (excluding this one) and place in your eMERGE home directory via Cypress.

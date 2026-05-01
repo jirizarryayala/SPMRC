@@ -5,5 +5,7 @@ This folder contains files needed to run a GWAS. To run a GWAS, follow the below
 3) Adjust .sh file by inputting ICD codes, output file path, type of GWAS you'd like, etc.
 4) Submit the job via Cypress (type sbatch GWAS_master_script.sh) and confirm it ran (by checking the queue using squeue)
 
+Email ssalter@tulane.edu if you have questions.
+
 List of possible Errors and Fixes:
 1) sbatch: error: instead of expected UNIX line breaks (\n). Fix: dos2unix GWAS_Script.sh

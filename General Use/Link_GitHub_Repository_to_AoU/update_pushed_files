@@ -1,6 +1,6 @@
 #RUN THIS EVERY TIME TO UPDATE YOUR FILE IN REPOSITORY
 # Navigate into the repo and push
-%cd ~/SPMRC
+%cd ~/SPMRC #replace with your GitHub directory
 !git add .
 !git commit -m "Updating files from AoU Workbench"
 !git push origin main  # Change 'main' to 'master' if your branch uses the old naming convention

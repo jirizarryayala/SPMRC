@@ -1,0 +1,36 @@
+#YOU ONLY NEED TO RUN THIS ONCE TO LINK YOUR GITHUB REPOSITORY 
+import os
+from getpass import getpass
+
+# --- User Configuration ---
+GITHUB_USER = "sophiagsalter" #replace with your GitHub username
+REPO_URL = "https://github.com/jirizarryayala/SPMRC.git" #replace with your GitHub url
+REPO_NAME = "SPMRC" #replace with your desired repository name
+EMAIL = "your_email@example.com"
+
+# --- Authentication ---
+print("Please enter your GitHub Personal Access Token (PAT):")
+pat = getpass()
+
+# --- Git Configuration ---
+# Set identity for commits
+os.system(f'git config --global user.name "{GITHUB_USER}"')
+os.system(f'git config --global user.email "{EMAIL}"')
+
+# Construct authenticated URL
+# Format: https://<username>:<token>@github.com/path/to/repo.git
+auth_url = REPO_URL.replace("https://", f"https://{GITHUB_USER}:{pat}@")
+
+# --- Cloning and Linking ---
+if not os.path.exists(REPO_NAME):
+    print(f"Cloning {REPO_NAME}...")
+    os.system(f"git clone {auth_url}")
+else:
+    print(f"Directory {REPO_NAME} already exists. Updating remote...")
+    os.chdir(REPO_NAME)
+    os.system(f"git remote set-url origin {auth_url}")
+    os.chdir("..")
+
+print("\nSetup Complete!")
+print(f"To push files: Move them into the '{REPO_NAME}' folder, then use the terminal or:")
+print("!git add . && git commit -m 'commit message' && git push origin main")
